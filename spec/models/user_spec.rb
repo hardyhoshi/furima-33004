@@ -21,12 +21,6 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user).to be_valid
     end
-    # it "passwordは半角英数混合であれば登録できる" do
-    #   @user.password = "1aaaaa"
-    #   @user.password_confirmation = "1aaaaa"
-    #   @user.valid?
-    #   expect(@user).to be_valid
-    # end
     it 'last_nameは全角（漢字・ひらがな・カタカナ）であれば登録できる' do
       @user.last_name = 'あああ'
       @user.valid?
