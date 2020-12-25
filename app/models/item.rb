@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :shipping_charge
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :presence
+  belongs_to :prefecture
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :delivery_day
 
