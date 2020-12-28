@@ -21,7 +21,7 @@ class Item < ApplicationRecord
     validates :shipping_charge_id
     validates :prefecture_id
     validates :delivery_day_id
-    validates :price, numericality: { greater_than: 300, less_than: 10000000 }
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than: 10000000 }
     validates :image
   end
 
