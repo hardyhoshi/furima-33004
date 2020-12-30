@@ -1,7 +1,7 @@
 class ItemOrder
 
   include ActiveModel::Model
-  attr_accesor :postal_code, :prefecture, :municipality, :street_number, :building_name, :phone_number
+  attr_accessor :postal_code, :prefecture, :municipality, :street_number, :building_name, :phone_number
 
   with_options presence: true do
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)" }
@@ -11,4 +11,7 @@ class ItemOrder
     validates :phone_number, numericality: {less_than_or_equal_to: 11}
   end
 
+  def save
+    # 住所の情報を保存
+  end
 end
