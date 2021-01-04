@@ -4,4 +4,7 @@ class OrdersController < ApplicationController
     @item_order = ItemOrder.new
   end
 
+  def create
+    binding.pry
+  end
 end
