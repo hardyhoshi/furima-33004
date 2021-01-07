@@ -4,24 +4,23 @@ class OrdersController < ApplicationController
 
   def index
     @item =Item.find(params[:item_id])
-    @item_order = ItemOrder.new
+    @order_address = OrderAddress.new
   end
   
   def create
-    @item_order = ItemOrder.new(order_params)
-    binding.pry
-    if @item_order.valid?
-      @item_order.save
+    @order_address = OrderAddress.new(order_params)
+    if @order_address.valid?
+      @order_address.save
       redirect_to root_path
-    # else
-      # render action: :new
+    else
+      render :index
     end
   end
 
   private
 
   def order_params
-    params.permit(:number, :exp_month, :exp_year, :cvc, :postal_code, :prefecture_id, :municipality, :street_number, :building_name, :phone_number)
+    params.require(:item_order).permit(:postal_code, :prefecture, :municipality, :street_number, :building_name, :phone_number)
   end
 
   def move_to_index
