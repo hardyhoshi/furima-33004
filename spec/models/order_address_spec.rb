@@ -24,7 +24,7 @@ RSpec.describe OrderAddress, type: :model do
       @order_address.valid?
       expect(@order_address.errors.full_messages).to include("Prefecture can't be blank", "Prefecture can't be blank")
     end
-    it 'prefecture_idが1(---)ではと購入できない' do
+    it 'prefecture_idが1(---)では購入できない' do
       @order_address.prefecture_id = 1
       @order_address.valid?
       expect(@order_address.errors.full_messages).to include("Prefecture must be other than 1")
@@ -62,6 +62,11 @@ RSpec.describe OrderAddress, type: :model do
       @order_address.phone_number = "090999999999999"
       @order_address.valid?
       expect(@order_address.errors.full_messages).to include("Phone number is invalid")
+    end
+    it "tokenが空では登録できないこと" do
+      @order_address.token = nil
+      @order_address.valid?
+      expect(@order_address.errors.full_messages).to include("Token can't be blank")
     end
   end
 end
