@@ -133,19 +133,15 @@
           <div class='item-img-content'>
             <%= image_tag item.image, class: "item-img" %>
 
-<%
-=begin
-%>
-            商品購入機能実装後に追加実装
-            <% if (条件文) %>
+
+          
+            <% if item.order.present? %>
             <div class='sold-out'>
               <span>Sold Out!!</span>
             </div>
-            <% end %> %>
+            <% end %>
           </div>
-<%
-=end
-%>
+
 
           <div class='item-info'>
             <h3 class='item-name'>
