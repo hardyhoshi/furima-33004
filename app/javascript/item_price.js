@@ -8,6 +8,6 @@ window.addEventListener('load', () => {
 
     const profitDom = document.getElementById("profit");
     const addTax = inputValue * 0.1
-    profitDom.innerHTML = (Math.floor(inputValue - addTax));
+    profitDom.innerHTML = (Math.ceil(inputValue - addTax));
   });
 });
