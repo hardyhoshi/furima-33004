@@ -3,10 +3,10 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-        last_name: 性
-        first_name: 名前
-        last_name_kana: 性(全角カタカナ)
-        first_name_kana: 名前(全角カタカナ)
+        last_name: お名前(性)
+        first_name: お名前(名)
+        last_name_kana: お名前カナ(性)
+        first_name_kana: お名前カナ(名)
         birthday: 誕生日
 
       item:
